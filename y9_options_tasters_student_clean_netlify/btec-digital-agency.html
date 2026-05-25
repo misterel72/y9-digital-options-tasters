@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTEC L2 IT Taster: Digital Agency Sprint</title>
+<style>
+:root{
+  --bg:#070714;--bg2:#120625;--panel:#111225;--panel2:#1a1235;--text:#f6fbff;--muted:#c9d2ee;
+  --teal:#18f0c8;--purple:#b44cff;--pink:#ff4fd8;--yellow:#ffe66d;--danger:#ff5f7a;
+  --line:rgba(255,255,255,.15);--soft:rgba(255,255,255,.08);--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.42);
+  font-size:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 10% 0%,rgba(24,240,200,.18),transparent 34%),radial-gradient(circle at 86% 4%,rgba(180,76,255,.28),transparent 38%),linear-gradient(145deg,var(--bg),var(--bg2) 58%,#04040a);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55}
+a{color:inherit}.wrap{max-width:1240px;margin:0 auto;padding:22px}.nav{display:flex;gap:12px;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(7,7,20,.86);backdrop-filter:blur(16px);z-index:30;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}.nav a{color:var(--muted);text-decoration:none;font-weight:900}.controls{display:flex;gap:8px;flex-wrap:wrap}.btn,.control{border:0;border-radius:14px;padding:11px 14px;font-weight:950;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}.btn{background:linear-gradient(135deg,var(--teal),#71ffe7);color:#041114;box-shadow:0 10px 30px rgba(24,240,200,.22)}.btn.secondary,.control{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--line);box-shadow:none}.btn.purple{background:linear-gradient(135deg,var(--purple),var(--pink));color:white}.btn.yellow{background:var(--yellow);color:#161100}.badge{display:inline-flex;border:1px solid rgba(24,240,200,.35);background:rgba(24,240,200,.08);border-radius:999px;padding:8px 12px;color:#dffdf8;font-weight:950;text-transform:uppercase;font-size:.78rem;letter-spacing:.07em}header{padding:34px 0 18px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center}.hero h1{font-size:clamp(2.35rem,6vw,5.9rem);line-height:.92;margin:16px 0;letter-spacing:-.065em}.hero p{font-size:1.12rem;max-width:720px}.accent{color:var(--teal)}.purple-text{color:var(--purple)}p{color:var(--muted)}strong{color:#fff}.hero-img,.brief-img{width:100%;border-radius:24px;border:1px solid rgba(255,255,255,.13);box-shadow:var(--shadow);background:rgba(255,255,255,.06)}.grid{display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}.panel,.card,.choice,.final-card,.stat{background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.045));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}.panel.teal{border-left:6px solid var(--teal)}.panel.purple{border-left:6px solid var(--purple)}.panel.yellow{border-left:6px solid var(--yellow)}h2{font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.05;margin:0 0 12px}h3{margin:0 0 8px;font-size:1.2rem}.section{margin:22px 0}.canva-deck{position:relative;width:100%;aspect-ratio:16/9;margin:16px 0 18px;overflow:hidden;border-radius:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.25)}.canva-deck iframe{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0}.step{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.105);border-radius:18px;padding:14px}.num{min-width:34px;height:34px;border-radius:12px;background:var(--teal);color:#041114;font-weight:1000;display:grid;place-items:center}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.timeline div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px;text-align:center}.timeline b{display:block;color:var(--teal);font-size:1.3rem}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.1);margin:4px;color:#fff;font-weight:900;font-size:.82rem}.email{background:linear-gradient(145deg,rgba(24,240,200,.11),rgba(180,76,255,.08));border:1px solid rgba(24,240,200,.28);border-radius:22px;padding:20px}.email-head{display:grid;grid-template-columns:90px 1fr;gap:6px 12px;color:var(--muted);font-size:.92rem}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.fact{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.11);border-radius:18px;padding:14px}.fact b{color:#fff;display:block}.persona,.product-card,.slogan-card{cursor:pointer;transition:.18s transform,.18s border-color,.18s background}.persona:hover,.product-card:hover,.slogan-card:hover,.choice:hover{transform:translateY(-2px);border-color:rgba(24,240,200,.55)}.selected{outline:3px solid var(--teal);background:rgba(24,240,200,.13)!important}.choice.correct{border-color:var(--teal);background:rgba(24,240,200,.14)}.choice.wrong{border-color:var(--danger);background:rgba(255,95,122,.13)}.product-card ul{margin:8px 0 0;padding-left:20px;color:var(--muted)}.tag{font-size:.8rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:var(--teal)}.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.stat b{display:block;font-size:1.65rem}.stat span{color:var(--muted);font-size:.88rem}.mission{display:none}.mission.active{display:block}.choices{display:grid;gap:10px;margin:16px 0}.choice{cursor:pointer;transition:.15s transform,.15s border-color;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:14px}.feedback{min-height:32px;font-weight:900;color:#fff}.forms{display:grid;gap:12px}input,textarea,select{width:100%;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.24);color:var(--text);border-radius:14px;padding:12px;font:inherit}textarea{min-height:92px}.hidden{display:none!important}.final-card{background:linear-gradient(145deg,rgba(24,240,200,.16),rgba(180,76,255,.08));margin-top:18px}.glossary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.glossary div{background:rgba(0,0,0,.18);border-radius:14px;padding:12px;color:var(--muted);border:1px solid rgba(255,255,255,.08)}.glossary b{color:var(--text)}.progress-wrap{height:16px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--purple));transition:.3s}.small{font-size:.9rem;color:var(--muted)}.large{font-size:18px}.contrast{filter:contrast(1.18)}.reduce *{transition:none!important;animation:none!important}.print-only{display:none}
+@media(max-width:980px){.hero,.grid.two,.grid.three,.grid.four,.facts,.hud,.glossary,.timeline{grid-template-columns:1fr}.nav{position:static}.wrap{padding:16px}.hero h1{font-size:3rem}}
+@media print{.nav,.controls,.canva-deck,.teacher-buttons,.btn,.hud,.hero-img,.brief-img{display:none!important}body{background:#fff;color:#111}.panel,.card,.choice,.final-card,.email{box-shadow:none;border:1px solid #333;background:#fff;color:#111}p,.small,.fact,.glossary div{color:#222}.print-only{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <div class="nav">
+    <a href="index.html">← Options Hub</a>
+    <div class="controls">
+      <button class="control" onclick="toggleLarge()">Font +</button>
+      <button class="control" onclick="toggleContrast()">Contrast</button>
+      <button class="control" onclick="toggleMotion()">Reduce motion</button>
+      <button class="control" onclick="resetGame()">Reset</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div>
+      <span class="badge">BTEC Level 2 IT taster</span>
+      <h1>FutureFest <span class="accent">Digital Agency</span> Sprint</h1>
+      <p>You are the creative team. Your client needs help launching a brand-new school event. Your job is to create a digital campaign idea that gets people interested and signed up.</p>
+      <p><a class="btn" href="#source-pack">Open source pack</a> <a class="btn purple" href="#game-setup">Start mission</a></p>
+    </div>
+    <img class="hero-img" src="assets/welcome_to_digital_agency_sprint.png" alt="Welcome to the Digital Agency Sprint hook image">
+  </header>
+
+  <section class="section grid two">
+    <article class="panel yellow">
+      <h2>Teacher-led intro, 10 minutes</h2>
+      <div class="canva-deck" aria-label="Embedded Canva teacher presentation">
+        <iframe loading="lazy" title="BTEC L2 ICT teacher-led intro deck" src="https://www.canva.com/design/DAHKqC7KRkY/gh4dzjRHeUqfNflgaUxT-g/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+      </div>
+      <p class="teacher-buttons"><a class="btn secondary" href="https://www.canva.com/design/DAHKqC7KRkY/gh4dzjRHeUqfNflgaUxT-g/view?utm_content=DAHKqC7KRkY&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Open Canva deck</a> <a class="btn" href="#source-pack">Move to source pack</a></p>
+      <div class="grid">
+        <div class="step"><span class="num">1</span><div><b>Hook</b><br>Ask: what makes a digital product trustworthy, exciting and useful?</div></div>
+        <div class="step"><span class="num">2</span><div><b>BTEC mindset</b><br>Explain that BTEC IT is applied. Students respond to a brief, make decisions and justify their choices.</div></div>
+        <div class="step"><span class="num">3</span><div><b>Agency sprint</b><br>Students work as a digital agency hired by the FutureFest events team.</div></div>
+      </div>
+    </article>
+    <article class="panel teal">
+      <h2>Student flow</h2>
+      <p>Work through the client email, event facts, audience personas, product choice cards, slogan studio and pitch scaffold. Your campaign choices should show clear audience awareness and strong justification.</p>
+      <div class="timeline" aria-label="lesson timing">
+        <div><b>5 min</b>brief</div><div><b>10 min</b>plan</div><div><b>15 min</b>create</div><div><b>10 min</b>refine</div><div><b>5 min</b>pitch</div>
+      </div>
+      <p class="small">Suggested grouping: pairs or threes. Students should use first names only if entering team details.</p>
+      <img class="brief-img" src="assets/futurefest_event_planning_infographic.png" alt="FutureFest client brief infographic">
+    </article>
+  </section>
+
+  <section class="section panel purple" id="source-pack">
+    <h2>Source Pack: FutureFest Client Brief</h2>
+    <p><strong>Read this first.</strong> Your campaign must be based on the client material below. The client wants a realistic, school-appropriate digital idea that gets Year 9 and Year 10 students interested, while still making sense to parents and staff.</p>
+    <div class="email">
+      <h3>Incoming message from the client</h3>
+      <div class="email-head"><b>From</b><span>FutureFest Student Events Team</span><b>Subject</b><span>Help us launch FutureFest!</span></div>
+      <p>Hello creative team,</p>
+      <p>We are launching a brand-new school event called <strong>FutureFest</strong> and we need your help. Because the event is new, many students and parents do not yet understand what it is or why they should get involved.</p>
+      <p>We need a campaign idea that is exciting, clear and aimed mainly at students in Year 9 and Year 10, while still making sense to parents and staff.</p>
+      <p>Please recommend the best digital product or campaign approach, create a clear message and prepare a short pitch for us. We are looking for ideas that are smart, realistic and eye-catching.</p>
+      <p><strong>Thanks,<br>The FutureFest Student Events Team</strong></p>
+    </div>
+  </section>
+
+  <section class="section grid two">
+    <article class="panel teal">
+      <h2>Event facts</h2>
+      <div class="facts">
+        <div class="fact"><b>Event</b>FutureFest</div>
+        <div class="fact"><b>Date</b>Friday 21 March</div>
+        <div class="fact"><b>Time</b>1:30 pm to 5:30 pm</div>
+        <div class="fact"><b>Location</b>School campus</div>
+        <div class="fact"><b>Entry</b>Free</div>
+        <div class="fact"><b>Audience</b>Students, parents, staff</div>
+        <div class="fact"><b>Purpose</b>Celebrate student talent</div>
+        <div class="fact"><b>Action</b>Encourage sign-up</div>
+      </div>
+      <h3>Features students can mention</h3>
+      <p><span class="pill">performances</span><span class="pill">coding demos</span><span class="pill">games</span><span class="pill">creative showcases</span><span class="pill">club stalls</span><span class="pill">food and drink</span><span class="pill">workshop sign-up</span></p>
+    </article>
+    <article class="panel purple">
+      <h2>Constraints and success criteria</h2>
+      <div class="grid two">
+        <div>
+          <h3>Constraints</h3>
+          <ul>
+            <li>45 minutes</li>
+            <li>Work in teams</li>
+            <li>School-appropriate</li>
+            <li>Aimed mainly at students</li>
+            <li>Understandable for parents too</li>
+            <li>Every choice must be explained</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Success criteria</h3>
+          <ul>
+            <li>Clear target audience</li>
+            <li>Smart digital product choice</li>
+            <li>Strong slogan or key message</li>
+            <li>Eye-catching design thinking</li>
+            <li>Realistic and persuasive idea</li>
+            <li>Clear justification</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section panel teal">
+    <h2>Audience persona cards</h2>
+    <p>Choose the audience your campaign is mainly designed to persuade. Your product and message should fit their needs.</p>
+    <div class="grid three" id="personaCards"></div>
+  </section>
+
+  <section class="section panel purple">
+    <h2>Digital product choice cards</h2>
+    <p>Choose one main product. You may also choose a supporting product. Strong teams explain why their choice fits the audience and the client goal.</p>
+    <div class="grid three" id="productCards"></div>
+  </section>
+
+  <section class="section panel yellow">
+    <h2>Slogan studio</h2>
+    <p>Pick a slogan or create your own. The strongest slogans are short, clear and memorable.</p>
+    <div class="grid four" id="sloganCards"></div>
+    <label style="display:block;margin-top:14px">Create your own slogan <input id="ownSlogan" placeholder="e.g. FutureFest starts with you"></label>
+  </section>
+
+  <section class="hud" aria-label="score dashboard">
+    <div class="stat"><b id="xp">0</b><span>XP</span></div>
+    <div class="stat"><b id="trust">50</b><span>Client trust</span></div>
+    <div class="stat"><b id="pro">50</b><span>Professionalism</span></div>
+    <div class="stat"><b id="round">Briefing</b><span>Mission stage</span></div>
+  </section>
+  <div class="progress-wrap" aria-label="mission progress"><div class="progress-bar" id="progress"></div></div>
+
+  <section class="section panel" id="game-setup">
+    <h2>Mission setup</h2>
+    <p>Enter your agency details, then complete the sprint challenges. You will generate a final pitch card at the end.</p>
+    <div class="forms grid two">
+      <label>Agency name <input id="agency" placeholder="e.g. Pixel Pirates"></label>
+      <label>Team members <input id="team" placeholder="First names only"></label>
+    </div><br>
+    <button class="btn purple" onclick="startGame()">Start the agency sprint</button>
+  </section>
+
+  <main id="game" class="panel hidden">
+    <section class="mission active" id="m1">
+      <h2>Round 1: Decode the real client requirements</h2>
+      <p>Select the <strong>five</strong> details that are genuine requirements from the brief. Beware of tempting nonsense. Nonsense often wears a hat and calls itself innovation.</p>
+      <div class="choices" id="briefChoices"></div>
+      <button class="btn secondary" onclick="hint('m1')">Hint, costs 5 XP</button> <button class="btn" onclick="checkBrief()">Submit requirements</button>
+      <div class="feedback" id="f1"></div>
+    </section>
+
+    <section class="mission" id="m2">
+      <h2>Round 2: Audience fit</h2>
+      <p>Use the persona cards above. Choose the best design decision for each audience need.</p>
+      <div class="choices" id="audienceChoices"></div>
+      <button class="btn secondary" onclick="hint('m2')">Hint, costs 5 XP</button> <button class="btn" onclick="checkAudience()">Submit audience decisions</button>
+      <div class="feedback" id="f2"></div>
+    </section>
+
+    <section class="mission" id="m3">
+      <h2>Round 3: Product recommendation</h2>
+      <p>Match each client problem to the best digital product. This checks that your choice is purposeful, not just pretty.</p>
+      <div class="choices" id="toolChoices"></div>
+      <button class="btn secondary" onclick="hint('m3')">Hint, costs 5 XP</button> <button class="btn" onclick="checkTools()">Submit product matches</button>
+      <div class="feedback" id="f3"></div>
+    </section>
+
+    <section class="mission" id="m4">
+      <h2>Round 4: Build your campaign plan</h2>
+      <p>Use the source pack, personas and product cards to complete your plan. Be specific. Vague answers are where good ideas go to have a nap.</p>
+      <div class="forms grid two">
+        <label>Chosen main product <select id="mainProduct"></select></label>
+        <label>Supporting product <select id="supportProduct"></select></label>
+        <label>Target audience <select id="audience"><option>Year 9 and Year 10 students</option><option>Parents and staff</option><option>All school community</option></select></label>
+        <label>Campaign title <input id="title" placeholder="e.g. FutureFest: Create It. Try It. Live It."></label>
+        <label>Key message <textarea id="message" placeholder="What should the audience understand or feel?"></textarea></label>
+        <label>Design choices <textarea id="design" placeholder="Mention colour, layout, images, accessibility, wording and call to action."></textarea></label>
+        <label>Why is this the best product choice? <textarea id="why" placeholder="Link your answer to the audience and client goal."></textarea></label>
+        <label>How will your idea encourage sign-up or attendance? <textarea id="action" placeholder="Explain the action you want people to take."></textarea></label>
+      </div><br>
+      <button class="btn yellow" onclick="checkPlan()">Score campaign plan</button>
+      <div class="feedback" id="f4"></div>
+    </section>
+
+    <section class="mission" id="m5">
+      <h2>Round 5: Pitch zone</h2>
+      <p>Prepare a 30-second pitch. Use this frame, then generate your evidence card.</p>
+      <div class="email">
+        <p><strong>Pitch frame:</strong> Our team recommends using a <strong>[product]</strong> because <strong>[reason]</strong>. This will work for <strong>[audience]</strong> because <strong>[audience need]</strong>. Our key message is <strong>[slogan/message]</strong>. It will encourage people to <strong>[action]</strong>.</p>
+      </div><br>
+      <label>Your 30-second pitch <textarea id="pitch" placeholder="Write your pitch here."></textarea></label><br>
+      <button class="btn purple" onclick="finishPitch()">Generate pitch card</button>
+      <div class="feedback" id="f5"></div>
+      <div id="final" class="final-card hidden"></div>
+    </section>
+  </main>
+
+  <section class="section panel">
+    <h2>Mini glossary</h2>
+    <div class="glossary">
+      <div><b>Client brief</b><br>The problem, audience, requirements and constraints given by a client.</div>
+      <div><b>Audience</b><br>The people the product is designed for.</div>
+      <div><b>Digital product</b><br>A digital outcome such as a poster, form, advert, microsite or social post.</div>
+      <div><b>Justification</b><br>A clear explanation of why your decision fits the brief.</div>
+    </div>
+  </section>
+</div>
+
+<script>
+const personas=[
+ {id:'adam',name:'Adam, Year 9',summary:'Enjoys games, sport and anything social. Scrolls quickly and ignores boring notices.',works:'Bold graphics, short messages, quick visual information and shareable content.'},
+ {id:'sara',name:'Sara, Year 10',summary:'Interested in creativity, performance and leadership. Wants clear information about activities.',works:'Clear structure, attractive design, polished content and a professional feel.'},
+ {id:'parent',name:'Parent viewer',summary:'Wants purpose, timings and organisation. Needs reassurance and clarity.',works:'Readable design, event details, sensible tone and obvious value.'}
+];
+const products=[
+ {id:'poster',name:'Poster',good:'Grabs attention quickly and displays key information.',limits:'Not interactive and gives less detail.',best:'Best for a strong first impression.'},
+ {id:'social',name:'Social media post',good:'Reaches students quickly with visual, shareable content.',limits:'Short attention window and easy to scroll past.',best:'Best for quick impact and student engagement.'},
+ {id:'microsite',name:'Microsite or event page',good:'Gives more information, links and sign-up details.',limits:'Takes more planning and needs clear navigation.',best:'Best when detail and sign-up need one home.'},
+ {id:'form',name:'Sign-up form',good:'Collects responses and books workshop places.',limits:'Not exciting on its own.',best:'Best as a supporting action tool.'},
+ {id:'advert',name:'Digital advert or promo slide',good:'High impact on screens or in assemblies.',limits:'Less detail and needs clear messaging.',best:'Best for visual excitement.'},
+ {id:'email',name:'Email banner or announcement',good:'Useful for parents and staff with clear details.',limits:'May not excite students by itself.',best:'Best as a supporting communication tool.'}
+];
+const slogans=['FutureFest - Create It. Try It. Live It.','Step Into the Future','One School. One Event. Endless Possibilities.','See It. Try It. Join It.','Where Ideas Come Alive','Your Talent. Your Tech. Your FutureFest','Do Not Just Watch - Get Involved','FutureFest Starts With You'];
+const correctBrief=['Brand-new school event','Target Year 9 and Year 10 students','Parents and staff must understand it too','Encourage sign-up or attendance','Use a modern, clear and school-appropriate tone'];
+const briefOptions=[...correctBrief,'Use confusing slang so adults cannot understand it','Hide the date to create mystery','Choose a product without explaining why','Make it only for teachers','Use tiny text because it looks professional'];
+const audienceQ=[
+ {q:'Adam scrolls quickly and ignores boring notices. What is the best approach?',a:'Use bold visuals, short copy and a clear call to action',opts:['Use bold visuals, short copy and a clear call to action','Write a long paragraph explaining every activity','Use formal wording only']},
+ {q:'Sara wants to know what is included and whether it feels meaningful. What helps most?',a:'Use clear sections, polished design and specific activity examples',opts:['Use clear sections, polished design and specific activity examples','Only show a lightning bolt and no details','Make it look like a joke poster']},
+ {q:'Parents need reassurance and practical details. What must be visible?',a:'Date, time, location, purpose and how to sign up',opts:['Date, time, location, purpose and how to sign up','Only student slang and emojis','A design with no readable text']}
+];
+const toolQ=[
+ {q:'The client needs quick excitement from students.',a:'Social media post',opts:['Social media post','Unsorted spreadsheet','Plain folder list']},
+ {q:'The client needs all details and sign-up links in one place.',a:'Microsite or event page',opts:['Microsite or event page','A single icon','A tiny footer']},
+ {q:'The client needs to collect workshop interest.',a:'Sign-up form',opts:['Sign-up form','Poster only','Image file name']},
+ {q:'The client needs information on school display screens.',a:'Digital advert or promo slide',opts:['Digital advert or promo slide','Database table only','Hidden web page']}
+];
+let score={xp:0,trust:50,pro:50,stage:'Briefing',progress:0,badges:[]};
+function qs(id){return document.getElementById(id)}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function render(){qs('xp').textContent=score.xp;qs('trust').textContent=score.trust;qs('pro').textContent=score.pro;qs('round').textContent=score.stage;qs('progress').style.width=score.progress+'%';localStorage.setItem('btecAgencyScoreV2',JSON.stringify(score))}
+function renderCards(){
+ qs('personaCards').innerHTML=personas.map(p=>`<div class="card persona" onclick="selectCard(this,'persona')"><span class="tag">Persona</span><h3>${p.name}</h3><p>${p.summary}</p><p><strong>What works:</strong> ${p.works}</p></div>`).join('');
+ qs('productCards').innerHTML=products.map(p=>`<div class="card product-card" onclick="selectCard(this,'product')"><span class="tag">Product option</span><h3>${p.name}</h3><ul><li><strong>Good for:</strong> ${p.good}</li><li><strong>Limits:</strong> ${p.limits}</li><li><strong>Best when:</strong> ${p.best}</li></ul></div>`).join('');
+ qs('sloganCards').innerHTML=slogans.map(s=>`<div class="card slogan-card" onclick="selectCard(this,'slogan'); qs('ownSlogan').value='${s.replace(/'/g,"&#39;")}'"><strong>${s}</strong></div>`).join('');
+ let productOptions=products.map(p=>`<option>${p.name}</option>`).join('');qs('mainProduct').innerHTML=productOptions;qs('supportProduct').innerHTML='<option>None</option>'+productOptions;
+}
+function selectCard(el,group){ if(group==='slogan'){document.querySelectorAll('.slogan-card').forEach(c=>c.classList.remove('selected'));} el.classList.toggle('selected'); }
+function buildChoices(){
+ qs('briefChoices').innerHTML=shuffle(briefOptions).map(o=>`<div class="choice" onclick="this.classList.toggle('selected')">${o}</div>`).join('');
+ qs('audienceChoices').innerHTML=audienceQ.map((b,i)=>`<div class="panel"><b>${b.q}</b>${shuffle(b.opts).map(o=>`<label class="choice"><input type="radio" name="aud${i}" value="${o}"> ${o}</label>`).join('')}</div>`).join('');
+ qs('toolChoices').innerHTML=toolQ.map((t,i)=>`<div class="panel"><b>${t.q}</b>${shuffle(t.opts).map(o=>`<label class="choice"><input type="radio" name="tool${i}" value="${o}"> ${o}</label>`).join('')}</div>`).join('');
+}
+function selectedText(container){return [...container.querySelectorAll('.selected')].map(x=>x.textContent.trim())}
+function startGame(){qs('game').classList.remove('hidden');score.stage='1 of 5';score.progress=10;render();window.scrollTo({top:qs('game').offsetTop-20,behavior:'smooth'})}
+function checkBrief(){let s=selectedText(qs('briefChoices'));let correct=s.filter(x=>correctBrief.includes(x)).length;let wrong=s.filter(x=>!correctBrief.includes(x)).length;score.xp+=correct*8-wrong*4;score.trust+=correct*4-wrong*6;score.pro+=correct*3-wrong*4;score.xp=Math.max(0,score.xp);score.progress=25;qs('f1').textContent=correct===5&&wrong===0?'Client smiles. You found the real requirements.':'You found some useful points, but check which ideas came from the actual brief.';next('m2','2 of 5')}
+function checkAudience(){let correct=0;audienceQ.forEach((b,i)=>{let el=document.querySelector(`input[name="aud${i}"]:checked`); if(el&&el.value===b.a)correct++});score.xp+=correct*12;score.trust+=correct*5;score.pro+=correct*4;score.progress=42;qs('f2').textContent=`${correct}/3 audience decisions were strong.`;next('m3','3 of 5')}
+function checkTools(){let correct=0;toolQ.forEach((t,i)=>{let el=document.querySelector(`input[name="tool${i}"]:checked`); if(el&&el.value===t.a)correct++});score.xp+=correct*10;score.trust+=correct*4;score.pro+=correct*4;score.progress=60;qs('f3').textContent=`${correct}/4 product matches were purposeful.`;next('m4','4 of 5')}
+function checkPlan(){let fields=['title','message','design','why','action'];let total=fields.reduce((n,id)=>n+(qs(id).value.trim().length>35?1:0),0);let strongCombo=(qs('mainProduct').value==='Social media post'&&qs('supportProduct').value==='Sign-up form')||(qs('mainProduct').value==='Microsite or event page')||(qs('mainProduct').value==='Digital advert or promo slide'&&qs('supportProduct').value==='Sign-up form');score.xp+=total*8+(strongCombo?15:5);score.trust+=total*4+(strongCombo?8:2);score.pro+=total*5;score.progress=78;qs('f4').textContent=total>=4?'Strong campaign planning. You are ready to pitch.':'Add more detail before pitching. Link your choices to the audience and brief.';next('m5','5 of 5')}
+function finishPitch(){let pitch=qs('pitch').value.trim();let agency=qs('agency').value||'Unnamed Agency';let team=qs('team').value||'Year 9 Team';let slogan=qs('ownSlogan').value||'FutureFest Starts With You';let good=pitch.length>120;score.xp+=good?35:15;score.trust+=good?12:4;score.pro+=good?15:5;score.stage='Pitch complete';score.progress=100;if(score.xp>95)score.badges.push('Audience Whisperer');if(score.pro>85)score.badges.push('Professional Pitcher');if(score.trust>85)score.badges.push('Client Hero');if(!score.badges.length)score.badges.push('Rising Digital Consultant');render();qs('final').classList.remove('hidden');qs('final').innerHTML=`<h2>${qs('title').value||'FutureFest Campaign'}</h2><p><b>Agency:</b> ${agency}<br><b>Team:</b> ${team}<br><b>Audience:</b> ${qs('audience').value}<br><b>Main product:</b> ${qs('mainProduct').value}<br><b>Supporting product:</b> ${qs('supportProduct').value}<br><b>Slogan:</b> ${slogan}</p><p><b>Key message:</b> ${qs('message').value||'FutureFest is exciting, inclusive and worth joining.'}</p><p><b>Design decisions:</b> ${qs('design').value||'Clear layout, strong contrast, student-friendly visuals and visible call to action.'}</p><p><b>Justification:</b> ${qs('why').value||'The product fits the audience and helps the client communicate the event clearly.'}</p><p><b>Pitch:</b> ${pitch||'Our team recommends this campaign because it is clear, visual and gives students a simple way to get involved.'}</p><p><b>XP:</b> ${score.xp} | <b>Client trust:</b> ${score.trust} | <b>Professionalism:</b> ${score.pro}</p><p>${score.badges.map(b=>`<span class="pill">${b}</span>`).join(' ')}</p><button class="btn" onclick="window.print()">Print or save evidence</button>`;qs('f5').textContent='Pitch card generated. Screenshot it or print to PDF.'}
+function next(id,stage){render();setTimeout(()=>{document.querySelectorAll('.mission').forEach(m=>m.classList.remove('active'));qs(id).classList.add('active');score.stage=stage;render();window.scrollTo({top:qs('game').offsetTop-20,behavior:'smooth'})},750)}
+function hint(id){score.xp=Math.max(0,score.xp-5);render();const hints={m1:'Look for audience, purpose, action, tone and clarity.',m2:'Different audiences need different messaging. Match the design to the person.',m3:'The best tool is the one that solves the specific problem.',m4:'Use the words audience, goal, sign-up, clarity and call to action somewhere in your thinking.'};alert(hints[id]||'Be specific and professional.')}
+function resetGame(){localStorage.removeItem('btecAgencyScoreV2');location.reload()}
+function toggleLarge(){document.body.classList.toggle('large')}function toggleContrast(){document.body.classList.toggle('contrast')}function toggleMotion(){document.body.classList.toggle('reduce')}
+renderCards();buildChoices();render();
+</script>
+</body>
+</html>

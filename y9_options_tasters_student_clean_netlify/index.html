@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year 9 Digital Options Tasters</title>
+<style>
+:root{
+  --bg:#07111f; --panel:#101c2f; --panel2:#16263d; --text:#eef6ff; --muted:#a8bdd6;
+  --accent:#38e8ff; --accent2:#f7d046; --pink:#ff4fd8; --green:#45f29d; --red:#ff6666;
+  --radius:24px; --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top left,#17294a 0,#07111f 45%,#03070d 100%);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.55} a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:28px} header{min-height:48vh;display:grid;align-items:center;padding:50px 0}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 14px;color:var(--muted);font-weight:700;letter-spacing:.03em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.4rem,7vw,6.8rem);line-height:.92;margin:22px 0 16px;letter-spacing:-.07em} .hero p{max-width:760px;color:var(--muted);font-size:1.18rem}.hero strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 38px}.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.2),transparent 28%);pointer-events:none}.card h2{font-size:1.6rem;line-height:1.1;margin:8px 0}.card p{color:var(--muted);margin:0 0 18px}.tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.78rem;color:#dbeafe;font-weight:800}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:16px;padding:14px 16px;background:var(--accent);color:#031018;font-weight:900;box-shadow:0 10px 30px rgba(56,232,255,.22);transition:.2s transform,.2s filter}.btn:hover{transform:translateY(-2px);filter:saturate(1.2)}.btn.yellow{background:var(--accent2)}.btn.pink{background:var(--pink);color:#fff}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 60px}.mini{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}.mini b{display:block;color:#fff}.mini span{color:var(--muted);font-size:.9rem} footer{padding:30px 0 60px;color:var(--muted)}
+@media(max-width:900px){.grid,.meta{grid-template-columns:1fr}.card{min-height:auto}header{min-height:auto}.wrap{padding:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <span class="badge">Year 9 Options Tasters</span>
+      <h1>Three digital missions. One epic choice.</h1>
+      <p>Launch-ready standalone taster lessons for <strong>BTEC Level 2 IT</strong>, <strong>IGCSE ICT</strong> and <strong>IGCSE Computer Science</strong>. Start with the teacher-led intro, then complete a mission using evidence, decisions, challenges and a final report.</p>
+    </div>
+  </header>
+  <section class="grid" aria-label="Lesson launch cards">
+    <a class="card" href="btec-digital-agency.html" style="--accent:#45f29d">
+      <div><span class="tag">BTEC L2 IT</span><h2>Digital Agency Sprint</h2><p>Students become a digital agency solving a client brief. They decode requirements, make design decisions, choose tools and pitch a campaign product.</p></div>
+      <span class="btn" style="background:#45f29d">Launch BTEC Mission</span>
+    </a>
+    <a class="card" href="igcse-ict-control-room.html" style="--accent:#38e8ff">
+      <div><span class="tag">IGCSE ICT</span><h2>ICT Control Room</h2><p>Students rescue a school event using real source artefacts: messy files, broken formulae, database records, poor poster design, website errors and launch priorities.</p></div>
+      <span class="btn">Launch ICT Mission</span>
+    </a>
+    <a class="card" href="igcse-cs-escape-room.html" style="--accent:#ff4fd8">
+      <div><span class="tag">IGCSE Computer Science</span><h2>Algorithmic Escape Room</h2><p>Students escape a rogue AI facility using real puzzle evidence: binary clues, truth tables, flowcharts, debugging snippets, test data and final-boss pseudocode.</p></div>
+      <span class="btn pink">Launch CS Mission</span>
+    </a>
+  </section>
+  <section class="meta" aria-label="Teacher quick setup">
+    <div class="mini"><b>Timing</b><span>45 to 60 minutes each. Works as single lesson tasters or carousel sessions.</span></div>
+    <div class="mini"><b>Setup</b><span>No student logins. Canva decks are embedded. Games run from Netlify or a local browser.</span></div>
+    <div class="mini"><b>Evidence</b><span>Each lesson generates a final report or certificate students can screenshot or print.</span></div>
+    <div class="mini"><b>Accessibility</b><span>Built-in font size, reduced motion and high contrast toggles inside each activity.</span></div>
+  </section>
+  <footer>
+    Built for quick deployment. Upload the folder to Netlify as a static site and you are away. Like an arcade cabinet, but less sticky.
+  </footer>
+</div>
+</body>
+</html>
