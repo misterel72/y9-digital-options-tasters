@@ -3,6 +3,47 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IGCSE ICT Control Room</title></head>
 <body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
 <script>
+const overview = `
+  <section class="section panel blue" id="course-overview">
+    <span class="badge">What does this actually mean to me?</span>
+    <h2>IGCSE ICT: the student version</h2>
+    <p>IGCSE ICT is about using digital tools accurately and professionally. You learn the theory behind ICT, but a major part of the course is practical: producing documents, spreadsheets, databases, presentations, images and websites to meet a task.</p>
+    <div class="grid three">
+      <article class="card">
+        <span class="tag">What you will do</span>
+        <h3>Use software to solve practical tasks</h3>
+        <ul>
+          <li>Organise files and work professionally.</li>
+          <li>Create documents, layouts and presentations.</li>
+          <li>Use spreadsheets, formulae, graphs and charts.</li>
+          <li>Work with databases, images and web pages.</li>
+          <li>Learn about systems, networks, safety, security and ICT in society.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">How it feels</span>
+        <h3>Practical, precise and deadline-focused</h3>
+        <ul>
+          <li>You need to follow instructions carefully.</li>
+          <li>Small details matter, such as filenames, formulae, layout and formatting.</li>
+          <li>You will practise exam-style practical tasks.</li>
+          <li>You need both speed and accuracy with common digital tools.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">Good fit if...</span>
+        <h3>You like using technology well</h3>
+        <ul>
+          <li>You enjoy practical computer work.</li>
+          <li>You like making work look clear and professional.</li>
+          <li>You are careful with details.</li>
+          <li>You want useful digital skills for school, work and future study.</li>
+        </ul>
+      </article>
+    </div>
+    <p><strong>In plain English:</strong> choose ICT if you want to become confident, accurate and professional with digital tools. It suits students who enjoy practical tasks and can work carefully under instructions.</p>
+  </section>
+`;
 const replacements = [
   ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
   ['IGCSE ICT teacher-led intro deck','IGCSE ICT mission briefing deck'],
@@ -18,6 +59,7 @@ fetch('igcse-ict-control-room.html')
   .then(r => r.text())
   .then(html => {
     for (const [from, to] of replacements) html = html.split(from).join(to);
+    html = html.replace('</header>', '</header>' + overview);
     document.open(); document.write(html); document.close();
   });
 </script></body></html>
