@@ -3,6 +3,46 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>BTEC Digital Agency Sprint</title></head>
 <body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
 <script>
+const overview = `
+  <section class="section panel teal" id="course-overview">
+    <span class="badge">What does this actually mean to me?</span>
+    <h2>BTEC Level 2 IT: the student version</h2>
+    <p>BTEC IT is for students who want to use technology to solve realistic problems. It is more project-based than a traditional exam-only course. You create evidence, respond to briefs, meet deadlines and explain why your choices are suitable.</p>
+    <div class="grid three">
+      <article class="card">
+        <span class="tag">What you will do</span>
+        <h3>Build practical digital evidence</h3>
+        <ul>
+          <li>Use IT to communicate information clearly.</li>
+          <li>Create products for realistic audiences and purposes.</li>
+          <li>Use tools such as documents, presentations, spreadsheets, graphics, websites, databases or other digital products, depending on the units studied.</li>
+          <li>Explain and improve your work using feedback.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">How it feels</span>
+        <h3>Less one-off exam, more ongoing project work</h3>
+        <ul>
+          <li>You need to keep your work organised.</li>
+          <li>You will have assignment deadlines.</li>
+          <li>You will need to act on feedback and improve work.</li>
+          <li>Falling behind makes the course much harder, so steady progress matters.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">Good fit if...</span>
+        <h3>You like applied digital work</h3>
+        <ul>
+          <li>You enjoy making things with technology.</li>
+          <li>You prefer clear tasks and practical evidence.</li>
+          <li>You can work independently and meet deadlines.</li>
+          <li>You are willing to explain your decisions, not just make something look good.</li>
+        </ul>
+      </article>
+    </div>
+    <p><strong>In plain English:</strong> choose BTEC IT if you want a practical, applied route where your portfolio shows what you can actually produce with technology. It rewards organisation, effort over time and the ability to improve your work.</p>
+  </section>
+`;
 const replacements = [
   ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
   ['Embedded Canva teacher presentation','Embedded mission briefing presentation'],
@@ -21,6 +61,7 @@ fetch('btec-digital-agency.html')
   .then(r => r.text())
   .then(html => {
     for (const [from, to] of replacements) html = html.split(from).join(to);
+    html = html.replace('</header>', '</header>' + overview);
     document.open(); document.write(html); document.close();
   });
 </script></body></html>
