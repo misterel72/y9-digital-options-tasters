@@ -44,6 +44,31 @@ const overview = `
     <p><strong>In plain English:</strong> choose Computer Science if you enjoy logic, coding and problem-solving. It is less about using software packages and more about understanding how computers work and how to program solutions.</p>
   </section>
 `;
+const asciiRef = `
+  <section class="section panel cyan" id="ascii-reference">
+    <h2>ASCII uppercase reference: A to Z</h2>
+    <p>After you convert an 8-bit binary number into denary, use this table to find the matching uppercase ASCII letter.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Letter</th><th>Denary</th><th>8-bit binary</th><th>Letter</th><th>Denary</th><th>8-bit binary</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>65</td><td><code>01000001</code></td><td>N</td><td>78</td><td><code>01001110</code></td></tr>
+        <tr><td>B</td><td>66</td><td><code>01000010</code></td><td>O</td><td>79</td><td><code>01001111</code></td></tr>
+        <tr><td>C</td><td>67</td><td><code>01000011</code></td><td>P</td><td>80</td><td><code>01010000</code></td></tr>
+        <tr><td>D</td><td>68</td><td><code>01000100</code></td><td>Q</td><td>81</td><td><code>01010001</code></td></tr>
+        <tr><td>E</td><td>69</td><td><code>01000101</code></td><td>R</td><td>82</td><td><code>01010010</code></td></tr>
+        <tr><td>F</td><td>70</td><td><code>01000110</code></td><td>S</td><td>83</td><td><code>01010011</code></td></tr>
+        <tr><td>G</td><td>71</td><td><code>01000111</code></td><td>T</td><td>84</td><td><code>01010100</code></td></tr>
+        <tr><td>H</td><td>72</td><td><code>01001000</code></td><td>U</td><td>85</td><td><code>01010101</code></td></tr>
+        <tr><td>I</td><td>73</td><td><code>01001001</code></td><td>V</td><td>86</td><td><code>01010110</code></td></tr>
+        <tr><td>J</td><td>74</td><td><code>01001010</code></td><td>W</td><td>87</td><td><code>01010111</code></td></tr>
+        <tr><td>K</td><td>75</td><td><code>01001011</code></td><td>X</td><td>88</td><td><code>01011000</code></td></tr>
+        <tr><td>L</td><td>76</td><td><code>01001100</code></td><td>Y</td><td>89</td><td><code>01011001</code></td></tr>
+        <tr><td>M</td><td>77</td><td><code>01001101</code></td><td>Z</td><td>90</td><td><code>01011010</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="small"><strong>Example:</strong> <code>01000100</code> = 68, and 68 is D in ASCII.</p>
+  </section>
+`;
 const replacements = [
   ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
   ['IGCSE Computer Science teacher-led intro deck','IGCSE Computer Science mission briefing deck'],
@@ -59,6 +84,7 @@ fetch('igcse-cs-escape-room.html')
   .then(html => {
     for (const [from, to] of replacements) html = html.split(from).join(to);
     html = html.replace('</header>', '</header>' + overview);
+    html = html.replace('<section class="section grid three"><article class="panel"><h2>Logic gate rules</h2>', asciiRef + '<section class="section grid three"><article class="panel"><h2>Logic gate rules</h2>');
     document.open(); document.write(html); document.close();
   });
 </script></body></html>
