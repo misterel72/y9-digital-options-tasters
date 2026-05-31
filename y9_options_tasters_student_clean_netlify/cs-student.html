@@ -3,6 +3,47 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IGCSE Computer Science Escape Room</title></head>
 <body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
 <script>
+const overview = `
+  <section class="section panel green" id="course-overview">
+    <span class="badge">What does this actually mean to me?</span>
+    <h2>IGCSE Computer Science: the student version</h2>
+    <p>IGCSE Computer Science is about understanding how computers work and how to solve problems with logic, algorithms and code. It is less about using software and more about thinking like a computer scientist.</p>
+    <div class="grid three">
+      <article class="card">
+        <span class="tag">What you will do</span>
+        <h3>Learn the logic behind computing</h3>
+        <ul>
+          <li>Study data representation, binary and computer systems.</li>
+          <li>Learn about hardware, software, networks and the internet.</li>
+          <li>Design algorithms using pseudocode and flowcharts.</li>
+          <li>Write, test and debug programs.</li>
+          <li>Use Boolean logic, truth tables, databases and problem-solving strategies.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">How it feels</span>
+        <h3>Logical, challenging and problem-based</h3>
+        <ul>
+          <li>You need to be comfortable with puzzles and precise thinking.</li>
+          <li>You will practise programming regularly.</li>
+          <li>You need to explain how and why a solution works.</li>
+          <li>Some topics feel abstract at first, but they become powerful once they click.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="tag">Good fit if...</span>
+        <h3>You like logic and code</h3>
+        <ul>
+          <li>You enjoy solving puzzles and spotting patterns.</li>
+          <li>You want to understand what happens inside a computer.</li>
+          <li>You are willing to debug and keep trying when code breaks.</li>
+          <li>You might be interested in programming, cybersecurity, AI, engineering or software development.</li>
+        </ul>
+      </article>
+    </div>
+    <p><strong>In plain English:</strong> choose Computer Science if you want to understand how technology works underneath the surface. It suits students who enjoy logic, problem-solving, coding and making very literal machines do exactly what they were told to do.</p>
+  </section>
+`;
 const replacements = [
   ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
   ['IGCSE Computer Science teacher-led intro deck','IGCSE Computer Science mission briefing deck'],
@@ -17,6 +58,7 @@ fetch('igcse-cs-escape-room.html')
   .then(r => r.text())
   .then(html => {
     for (const [from, to] of replacements) html = html.split(from).join(to);
+    html = html.replace('</header>', '</header>' + overview);
     document.open(); document.write(html); document.close();
   });
 </script></body></html>
