@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IGCSE ICT Control Room</title></head>
+<body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
+<script>
+const replacements = [
+  ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
+  ['IGCSE ICT teacher-led intro deck','IGCSE ICT mission briefing deck'],
+  ['Open Canva deck','Open briefing deck'],
+  ['Move to source pack','Continue to source pack'],
+  ['<b>Hook</b><br>Show the disaster board. Ask which problem would cause the biggest real-world issue.','<b>Starting question</b><br>Study the disaster board. Which problem would cause the biggest real-world issue?'],
+  ['<b>Mission launch</b><br>Students fix five live systems, then prioritise the most urgent risks.','<b>Mission launch</b><br>Fix five live systems, then prioritise the most urgent risks.'],
+  ['<h2>Student flow</h2>','<h2>Your mission route</h2>'],
+  ['The event files have been dumped into one folder. Students must create a structure that someone else could understand.','The event files have been dumped into one folder. Create a structure that someone else could understand.'],
+  ['<h2>Mission setup</h2>','<h2>Set up your control room</h2>']
+];
+fetch('igcse-ict-control-room.html')
+  .then(r => r.text())
+  .then(html => {
+    for (const [from, to] of replacements) html = html.split(from).join(to);
+    document.open(); document.write(html); document.close();
+  });
+</script></body></html>
