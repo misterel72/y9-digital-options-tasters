@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>BTEC Digital Agency Sprint</title></head>
+<body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
+<script>
+const replacements = [
+  ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
+  ['Embedded Canva teacher presentation','Embedded mission briefing presentation'],
+  ['BTEC L2 ICT teacher-led intro deck','BTEC L2 IT mission briefing deck'],
+  ['Open Canva deck','Open briefing deck'],
+  ['Move to source pack','Continue to source pack'],
+  ['<b>Hook</b><br>Ask: what makes a digital product trustworthy, exciting and useful?','<b>Starting question</b><br>What makes a digital product trustworthy, exciting and useful?'],
+  ['<b>BTEC mindset</b><br>Explain that BTEC IT is applied. Students respond to a brief, make decisions and justify their choices.','<b>BTEC mindset</b><br>BTEC IT is applied. You respond to a brief, make decisions and justify your choices.'],
+  ['<b>Agency sprint</b><br>Students work as a digital agency hired by the FutureFest events team.','<b>Agency sprint</b><br>Work as a digital agency hired by the FutureFest events team.'],
+  ['<h2>Student flow</h2>','<h2>Your mission route</h2>'],
+  ['Suggested grouping: pairs or threes. Students should use first names only if entering team details.','Work in pairs or threes. Use first names only if entering team details.'],
+  ['<h2>Mission setup</h2>','<h2>Set up your agency</h2>'],
+  ['<h3>Features students can mention</h3>','<h3>Features you can mention</h3>']
+];
+fetch('btec-digital-agency.html')
+  .then(r => r.text())
+  .then(html => {
+    for (const [from, to] of replacements) html = html.split(from).join(to);
+    document.open(); document.write(html); document.close();
+  });
+</script></body></html>
