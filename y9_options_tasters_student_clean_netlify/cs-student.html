@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IGCSE Computer Science Escape Room</title></head>
+<body><p style="font-family:Arial,sans-serif;padding:2rem">Loading mission...</p>
+<script>
+const replacements = [
+  ['Teacher-led intro, 10 minutes','Mission briefing, 10 minutes'],
+  ['IGCSE Computer Science teacher-led intro deck','IGCSE Computer Science mission briefing deck'],
+  ['Open Canva deck','Open briefing deck'],
+  ['Move to source pack','Continue to source pack'],
+  ['<b>Hook</b><br>Show <code>01000001</code> and reveal that it can represent A. Computers need rules and representations.','<b>Starting clue</b><br><code>01000001</code> can represent A. Computers need rules and representations.'],
+  ['<b>Mission launch</b><br>Students solve six rooms and generate an escape certificate.','<b>Mission launch</b><br>Solve six rooms and generate an escape certificate.'],
+  ['<h2>Student flow</h2>','<h2>Your mission route</h2>'],
+  ['<h2>Mission setup</h2>','<h2>Set up your escape team</h2>']
+];
+fetch('igcse-cs-escape-room.html')
+  .then(r => r.text())
+  .then(html => {
+    for (const [from, to] of replacements) html = html.split(from).join(to);
+    document.open(); document.write(html); document.close();
+  });
+</script></body></html>
