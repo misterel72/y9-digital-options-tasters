@@ -14,8 +14,8 @@
 .wrap{max-width:1180px;margin:0 auto;padding:28px} header{min-height:48vh;display:grid;align-items:center;padding:50px 0}
 .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 14px;color:var(--muted);font-weight:700;letter-spacing:.03em;text-transform:uppercase;font-size:.78rem}
 h1{font-size:clamp(2.4rem,7vw,6.8rem);line-height:.92;margin:22px 0 16px;letter-spacing:-.07em} .hero p{max-width:760px;color:var(--muted);font-size:1.18rem}.hero strong{color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 38px}.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.2),transparent 28%);pointer-events:none}.card h2{font-size:1.6rem;line-height:1.1;margin:8px 0}.card p{color:var(--muted);margin:0 0 18px}.tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.78rem;color:#dbeafe;font-weight:800}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:16px;padding:14px 16px;background:var(--accent);color:#031018;font-weight:900;box-shadow:0 10px 30px rgba(56,232,255,.22);transition:.2s transform,.2s filter}.btn:hover{transform:translateY(-2px);filter:saturate(1.2)}.btn.yellow{background:var(--accent2)}.btn.pink{background:var(--pink);color:#fff}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 60px}.mini{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}.mini b{display:block;color:#fff}.mini span{color:var(--muted);font-size:.9rem} footer{padding:30px 0 60px;color:var(--muted)}
-@media(max-width:900px){.grid,.meta{grid-template-columns:1fr}.card{min-height:auto}header{min-height:auto}.wrap{padding:20px}}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 38px}.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.2),transparent 28%);pointer-events:none}.card h2{font-size:1.6rem;line-height:1.1;margin:8px 0}.card p{color:var(--muted);margin:0 0 18px}.tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.78rem;color:#dbeafe;font-weight:800}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:16px;padding:14px 16px;background:var(--accent);color:#031018;font-weight:900;box-shadow:0 10px 30px rgba(56,232,255,.22);transition:.2s transform,.2s filter}.btn:hover{transform:translateY(-2px);filter:saturate(1.2)}.btn.yellow{background:var(--accent2)}.btn.pink{background:var(--pink);color:#fff}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 60px}.mini{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}.mini b{display:block;color:#fff}.mini span{color:var(--muted);font-size:.9rem}.values{background:linear-gradient(145deg,rgba(247,208,70,.16),rgba(56,232,255,.08));border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:-18px 0 32px}.values h2{font-size:clamp(1.5rem,3vw,2.3rem);margin:10px 0 8px}.values p{color:var(--muted);max-width:900px}.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.value-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}.value-card b{display:block;color:#fff;font-size:1.05rem}.value-card span{color:var(--muted);font-size:.95rem} footer{padding:30px 0 60px;color:var(--muted)}
+@media(max-width:900px){.grid,.meta,.values-grid{grid-template-columns:1fr}.card{min-height:auto}header{min-height:auto}.wrap{padding:20px}}
 </style>
 </head>
 <body>
@@ -27,6 +27,15 @@ h1{font-size:clamp(2.4rem,7vw,6.8rem);line-height:.92;margin:22px 0 16px;letter-
       <p>Choose a mission and try out <strong>BTEC Level 2 IT</strong>, <strong>IGCSE ICT</strong> or <strong>IGCSE Computer Science</strong>. Watch the briefing, use the evidence, make decisions, solve the challenge and produce your final mission evidence.</p>
     </div>
   </header>
+  <section class="values" aria-label="School value and virtue focus">
+    <span class="badge">School Value and Virtue Focus</span>
+    <h2>Make a choice you can own.</h2>
+    <p>This options taster is about more than picking the mission that looks the most fun. It is about using evidence, thinking honestly about your strengths and taking responsibility for the pathway you choose.</p>
+    <div class="values-grid">
+      <div class="value-card"><b>June School Value: Personal Accountability</b><span>Read the course information carefully, ask questions, compare the routes and make a choice based on what fits you, not just what your friends choose.</span></div>
+      <div class="value-card"><b>Virtue of the Week: Determination</b><span>Some parts of the missions will be challenging. Stick with the problem, use the clues, improve your answer and keep going when it gets difficult.</span></div>
+    </div>
+  </section>
   <section class="grid" aria-label="Lesson launch cards">
     <a class="card" href="btec-student.html" style="--accent:#45f29d">
       <div><span class="tag">BTEC L2 IT</span><h2>Digital Agency Sprint</h2><p>Become a digital agency solving a real client brief. Decode the requirements, make design decisions, choose your tools and pitch a campaign product.</p></div>
@@ -45,7 +54,7 @@ h1{font-size:clamp(2.4rem,7vw,6.8rem);line-height:.92;margin:22px 0 16px;letter-
     <div class="mini"><b>Mission time</b><span>Each mission takes about 45 to 60 minutes. Work carefully and use the evidence.</span></div>
     <div class="mini"><b>What you need</b><span>A device, a partner or small team, and the confidence to make decisions.</span></div>
     <div class="mini"><b>Final evidence</b><span>Each mission creates a report, pitch card or certificate you can screenshot or print.</span></div>
-    <div class="mini"><b>Accessibility</b><span>Use the font size, reduced motion and high contrast buttons if they help you.</span></div>
+    <div class="mini"><b>Reflection</b><span>At the end, be ready to explain how you showed personal accountability and determination.</span></div>
   </section>
   <footer>
     Choose a mission, read the brief, complete the challenge and save your final evidence. The arcade is open.
